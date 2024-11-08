@@ -4,7 +4,7 @@ Este proyecto fue desarrollado utilizando Python como lenguaje de programación 
 
 **IMPLEMENTACIÓN DEL PROYECTO EN PYTHON**
 
-![image](https://github.com/LauraP30/Proyecto-Gestion-Prestamos/blob/main/Importaciones.png?raw=true) 
+[![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/fa98c7de1939231c2fd07997b9c011042a0ae97c/Base%20de%20Datos.png)
 
 - **from datetime import datetime:**
   Importa la clase datetime del módulo datetime, lo que permite trabajar con fechas y horas en Python. Esta clase se usa para obtener la fecha y hora actuales, formatearlas o realizar cálculos con fechas.
@@ -62,7 +62,7 @@ Este proyecto fue desarrollado utilizando Python como lenguaje de programación 
 
   **IMPLEMENTACIÓN DE LA BASE DE DATOS EN FIREBASE**
 
-  [![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/main/Inicio_Sesión.png?raw=true) ](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/fa98c7de1939231c2fd07997b9c011042a0ae97c/Base%20de%20Datos.png)
+  [![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/fa98c7de1939231c2fd07997b9c011042a0ae97c/Base%20Datos.png)
   
 La base de datos de este proyecto fue implementada utilizando Firebase en su modalidad de base de datos en tiempo real, lo que permite una sincronización instantánea de los datos entre todos los usuarios. En Firebase, se crearon tres colecciones principales para organizar la información de la aplicación:
 
