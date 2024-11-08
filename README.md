@@ -4,7 +4,7 @@ Este proyecto fue desarrollado utilizando Python como lenguaje de programación 
 
 **IMPLEMENTACIÓN DEL PROYECTO EN PYTHON**
 
-[[![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/b59c92cb6968f50c82804053c25393da30cfe2c0/Importaciones.png)
+![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/b59c92cb6968f50c82804053c25393da30cfe2c0/Importaciones.png)
 
 
 - **from datetime import datetime:**
@@ -63,7 +63,7 @@ Este proyecto fue desarrollado utilizando Python como lenguaje de programación 
 
   **IMPLEMENTACIÓN DE LA BASE DE DATOS EN FIREBASE**
 
-  [[![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/8766cc03ee37958a913fc8fde1f7d770be8cfbe5/Base_Datos.png)
+![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/8766cc03ee37958a913fc8fde1f7d770be8cfbe5/Base_Datos.png)
   
 La base de datos de este proyecto fue implementada utilizando Firebase en su modalidad de base de datos en tiempo real, lo que permite una sincronización instantánea de los datos entre todos los usuarios. En Firebase, se crearon tres colecciones principales para organizar la información de la aplicación:
 
@@ -84,7 +84,7 @@ El proceso de inicio de sesión y creación de cuenta en la aplicación está ge
 
 **Pantalla de eventos**
 
-[![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/b59c92cb6968f50c82804053c25393da30cfe2c0/Eventos.png)
+![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/b59c92cb6968f50c82804053c25393da30cfe2c0/Eventos.png)
 
 La pantalla de eventos de la aplicación presenta una vista dinámica que muestra una serie de tarjetas (cards), cada una representando un evento diferente. Estas tarjetas se generan automáticamente a partir de los datos almacenados en la base de datos de Firebase, y contienen información clave como el nombre del evento, una imagen relacionada, la ubicación, la descripción, así como la fecha y hora del evento. La interfaz está diseñada para que los usuarios puedan desplazarse verticalmente por los eventos disponibles, visualizando de forma clara y atractiva los detalles de cada uno. La información que aparece en las tarjetas se sincroniza en tiempo real, por lo que cualquier cambio o adición de eventos en la base de datos se reflejará instantáneamente en la pantalla de los usuarios.
 
@@ -92,13 +92,13 @@ La pantalla de eventos de la aplicación presenta una vista dinámica que muestr
 
 **Detalles del evento en Popup**
 
-[![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/b59c92cb6968f50c82804053c25393da30cfe2c0/Detalle_Evento.png)
+![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/b59c92cb6968f50c82804053c25393da30cfe2c0/Detalle_Evento.png)
 
 Cada evento tiene su propio popup que se activa al hacer clic en una tarjeta del evento en la pantalla principal. Este popup muestra de manera detallada la imagen del evento, una descripción más extensa, la ubicación, la fecha y hora, brindando a los usuarios toda la información relevante de forma clara y accesible. Además, el popup incluye un botón de inscripción, que permite a los usuarios registrarse directamente en el evento con un solo clic.
 
 
 **Pantalla de eventos inscritos**
 
-[![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/b59c92cb6968f50c82804053c25393da30cfe2c0/Eventos_Inscritos.png)
+![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/b59c92cb6968f50c82804053c25393da30cfe2c0/Eventos_Inscritos.png)
 
 La pantalla de eventos inscritos muestra una lista de todos los eventos a los que el usuario se ha inscrito. En esta pantalla, los eventos se presentan en tarjetas (cards) que incluyen solo la imagen y el nombre del evento, proporcionando una vista sencilla pero clara de los eventos a los que el usuario está participando. Cada tarjeta tiene un botón de cancelar inscripción, que permite al usuario eliminar su inscripción de un evento. Al hacer clic en este botón, no solo se elimina el evento de la vista del usuario, sino que también se actualiza la base de datos en tiempo real, eliminando la inscripción en el backend.
