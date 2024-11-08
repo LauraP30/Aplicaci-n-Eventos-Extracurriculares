@@ -1,0 +1,341 @@
+ScreenManager:
+    id: screen_manager
+    EventsScreen:
+    LoginScreen:
+    SignupScreen:
+    MainScreen:
+    InscritosScreen:
+    CalendarScreen:
+
+<LoginScreen>:
+    name: 'loginscreen'
+    # Añadir la imagen del logo
+    Image:
+        source: 'images/logoU.png'  # Asegúrate de que la ruta sea correcta
+        size_hint: (0.3, 0.3)  # Ajusta el tamaño según necesites
+        pos_hint: {'center_x': 0.5, 'center_y': 0.9}  # Posicionar el logo más alto
+    MDLabel:
+        text: 'Iniciar Sesión'
+        font_style: 'H3'
+        halign: 'center'
+        pos_hint: {'center_y': 0.75}
+    MDTextField:
+        id: login_email
+        pos_hint: {'center_y': 0.6, 'center_x': 0.5}
+        size_hint: (0.7, 0.1)
+        hint_text: 'Correo'
+        helper_text: 'Requerido'
+        helper_text_mode: 'on_error'
+        icon_right: 'mail'
+        icon_right_color: app.theme_cls.primary_color
+        required: True
+        mode: "rectangle"
+
+    MDTextField:
+        id: login_password
+        pos_hint: {'center_y': 0.4, 'center_x': 0.5}
+        size_hint: (0.7, 0.1)
+        hint_text: 'Contraseña'
+        helper_text: 'Requerido'
+        helper_text_mode: 'on_error'
+        icon_right: 'key'
+        icon_right_color: app.theme_cls.primary_color
+        required: True
+        mode: "rectangle"
+        password: True
+    MDRaisedButton:
+        text: 'Ingresar'
+        size_hint: (0.13, 0.07)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+        md_bg_color: 0.0, 0.6, 0.2, 1  # Color verde EAN
+        on_press:
+            app.login()
+    MDTextButton:
+        text: 'Crear una cuenta'
+        markup: True
+        pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+        on_press:
+            root.manager.current = 'signupscreen'
+            root.manager.transition.direction = 'up'
+    
+
+<SignupScreen>:
+    name: 'signupscreen'
+    Image:
+        source: 'images/logoU.png'  # Asegúrate de que la ruta sea correcta
+        size_hint: (0.3, 0.3)  # Ajusta el tamaño según necesites
+        pos_hint: {'center_x': 0.5, 'center_y': 0.9}  # Posicionar el logo más alto
+    MDLabel:
+        text: 'Crear Cuenta'
+        font_style: 'H3'
+        halign: 'center'
+        pos_hint: {'center_y': 0.75}
+    MDTextField:
+        id: signup_email
+        pos_hint: {'center_y': 0.53, 'center_x': 0.5}
+        size_hint: (0.7, 0.1)
+        hint_text: 'Correo'
+        helper_text: 'Requerido'
+        helper_text_mode: 'on_error'
+        icon_right: 'mail'
+        icon_right_color: app.theme_cls.primary_color
+        required: True
+        mode: "rectangle"
+    MDTextField:
+        id: signup_username
+        pos_hint: {'center_y': 0.65, 'center_x': 0.5}
+        size_hint: (0.7, 0.1)
+        hint_text: 'Usuario'
+        helper_text: 'Requerido'
+        helper_text_mode: 'on_error'
+        icon_right: 'account'
+        icon_right_color: app.theme_cls.primary_color
+        required: True
+        mode: "rectangle"
+    MDTextField:
+        id: signup_password
+        pos_hint: {'center_y': 0.41, 'center_x': 0.5}
+        size_hint: (0.7, 0.1)
+        hint_text: 'Contraseña'
+        helper_text: 'Requerido'
+        helper_text_mode: 'on_error'
+        icon_right: 'key'
+        icon_right_color: app.theme_cls.primary_color
+        required: True
+        mode: "rectangle"
+        password: True
+    MDRaisedButton:
+        text: 'Crear Cuenta'
+        size_hint: (0.13, 0.07)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+        md_bg_color: 0.0, 0.6, 0.2, 1  # Color verde EAN
+        on_press: app.signup()
+    MDTextButton:
+        text: 'Ya tengo una cuenta'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+        on_press:
+            root.manager.current = 'loginscreen'
+            root.manager.transition.direction = 'down'
+            
+
+<MainScreen>:
+    name: 'mainscreen'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: dp(10)
+        spacing: dp(10)
+
+        # Fila: Foto de perfil y menú desplegable
+        MDBoxLayout:
+            id: events_layout
+            size_hint_y: None
+            height: '56dp'
+            padding: '10dp'
+            spacing: '10dp'
+            height: self.minimum_height
+
+            # Espacio para el botón de la foto de perfil (icono de usuario)
+            MDIconButton:
+                icon: "account-circle"  # Icono predeterminado
+                user_font_size: "40sp"  # Tamaño del icono
+                pos_hint: {"center_y": 0.5}  # Centrado vertical
+                size_hint_x: None  # Ancho fijo
+                width: '50dp'  # Ancho fijo
+                on_release: app.select_profile_picture()  # Acción al hacer clic
+
+            # Espacio flexible para empujar el menú a la derecha
+            Widget:
+                size_hint_x: 1
+
+            MDIconButton:
+                id: menu_button
+                icon: "menu"
+                user_font_size: "100sp"
+                size_hint_x: None
+                width: '50dp'  # Ajusta el tamaño del botón
+                pos_hint: {"center_x": 0.10}
+                on_release: app.open_menu()  # Se conecta a la función open_menu de la app
+
+
+        # Segunda fila: Barra de búsqueda
+        MDTextField:
+            hint_text: "Buscar eventos"
+            icon_left: "magnify"
+            size_hint_x: 0.9
+            pos_hint: {"center_x": 0.5}
+            on_text: app.search_events(self.text)
+
+        # ScrollView
+        ScrollView:
+            MDBoxLayout:
+                id: events_box
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height  # Ajustar la altura del contenedor
+                padding: dp(10)
+                spacing: dp(10)
+
+                # Ejemplo de tarjeta
+                MDCard:
+                    size_hint_y: None
+                    height: dp(200)
+                    pos_hint: {"center_x": 0.5}  # Centra la tarjeta
+                    # Aquí puedes agregar más contenido a la tarjeta
+
+        # Contenedor de botones centrados en la pantalla
+        MDBoxLayout:
+            orientation: 'horizontal'
+            size_hint: None, None  # No queremos que ocupe todo el espacio
+            size_hint_y: None  # Desactivar el tamaño en el eje Y
+            height: '56dp'  # Altura de los botones
+            spacing: dp(20)  # Espaciado entre los botones
+            padding: dp(10)  # Padding dentro del contenedor
+            pos_hint: {'center_x': 0.17, 'center_y': 0.5}  # Centrado en la pantalla (eje X y Y)
+
+            MDRaisedButton:
+                size_hint_x: None  # Ancho fijo
+                width: '150dp'
+                md_bg_color: 0.0, 0.6, 0.2, 1  # Color verde EAN
+                on_press: app.show_inscritos_screen()
+                
+                BoxLayout:
+                    orientation: 'horizontal'  # Dirección horizontal (icono a la izquierda, texto a la derecha)
+                    MDIcon:
+                        icon: "account-check"  # Ícono correspondiente para Inscritos
+                        size_hint_x: None
+                        width: dp(24)  # Tamaño del icono (ajústalo si es necesario)
+                    Label:
+                        text: "Inscritos"
+                        size_hint_x: None
+                        width: dp(100)  # Ajusta el ancho del texto si es necesario
+
+
+            MDRaisedButton:
+                size_hint_x: None  # Ancho fijo
+                width: '150dp'
+                md_bg_color: 0.0, 0.6, 0.2, 1  # Color verde EAN
+                on_press: app.show_calendario()
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    MDIcon:
+                        icon: "calendar"  # Ícono correspondiente para Calendario
+                        size_hint_x: None
+                        width: dp(24)  # Tamaño del icono
+                    Label:
+                        text: "Calendario"
+                        size_hint_x: None
+                        width: dp(100)  # Ajusta el ancho del texto
+
+<InscritosScreen>:
+    name: "inscritoscreen"
+    on_enter: app.cargar_inscripciones()
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(10)
+
+        # Fila de encabezado con el botón de flecha hacia atrás
+        MDBoxLayout:
+            size_hint_y: None
+            height: "56dp"
+            padding: dp(10)
+            spacing: dp(10)
+
+            # Flecha hacia atrás
+            MDIconButton:
+                icon: "arrow-left"  # Ícono de flecha hacia atrás
+                user_font_size: "24sp"
+                size_hint_x: None
+                width: "50dp"
+                on_press: app.sm.current = "mainscreen"  # Cambiar a la pantalla de eventos
+
+            # Espacio flexible para empujar el menú a la derecha
+            Widget:
+                size_hint_x: 1
+
+            MDIconButton:
+                id: menu_button
+                icon: "menu"
+                user_font_size: "100sp"
+                size_hint_x: None
+                width: '50dp'  # Ajusta el tamaño del botón
+                pos_hint: {"center_x": 0.10}
+                on_release: app.open_menu()  # Se conecta a la función open_menu de la app
+
+        # Título centrado debajo de la flecha
+        MDLabel:
+            text: "Eventos Inscritos"
+            font_style: "H5"
+            halign: "center"
+            size_hint_y: None
+            height: "50dp"
+
+        # Contenedor de inscripción (Aquí se agregarán las tarjetas dinámicamente)
+        ScrollView:
+            MDGridLayout:  # Cambié MDBoxLayout por MDGridLayout
+                id: inscriptions_box
+                size_hint_y: None
+                height: self.minimum_height
+                cols: 2  # Establecemos dos columnas
+                padding: dp(10)
+                spacing: dp(5)
+
+                # Esto es lo que hace que las tarjetas se ajusten mejor al tamaño de la pantalla
+                # Se ajustan al 45% de la anchura total disponible
+                size_hint_x: None
+                width: "150dp"  # Ancho de cada tarjeta en las dos columnas
+                height: "200dp"  # Altura de cada tarjeta
+
+<CalendarScreen>:
+    name: 'calendar_screen'  # Pantalla del calendario
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: dp(10)  # Ajuste del padding general
+        spacing: dp(10)  # Ajuste del espaciado entre elementos
+
+        # Fila de encabezado con el botón de flecha hacia atrás
+        MDBoxLayout:
+            size_hint_y: None  # No se estira verticalmente
+            height: "56dp"  # Altura fija para el encabezado
+            padding: dp(10)  # Padding para los botones
+            spacing: dp(10)  # Espaciado entre los botones
+
+            # Flecha hacia atrás
+            MDIconButton:
+                icon: "arrow-left"  # Ícono de flecha hacia atrás
+                user_font_size: "24sp"
+                size_hint_x: None
+                width: "50dp"
+                on_press: app.sm.current = "mainscreen"  # Cambiar a la pantalla de eventos
+
+            # Espacio flexible para empujar el botón del menú hacia la derecha
+            Widget:
+                size_hint_x: 1  # Empuja los botones a los extremos
+
+            # Botón de menú
+            MDIconButton:
+                id: menu_button
+                icon: "menu"
+                user_font_size: "30sp"  # Ajusta el tamaño del icono del menú
+                size_hint_x: None
+                width: '50dp'  # Tamaño del botón del menú
+                pos_hint: {"center_x": 0.10}  # Alineación al centro
+                on_release: app.open_menu()  # Conectar a la función open_menu de la app
+
+        # Título centrado debajo de la flecha
+        MDLabel:
+            text: "Calendario"
+            font_style: "H5"
+            halign: "center"
+            size_hint_y: None  # No se estira verticalmente
+            height: "50dp"  # Fijamos la altura del título para evitar que se estire
+            padding: dp(10)  # Ajustamos padding si es necesario
+
+        # Resto del contenido de la pantalla (como el calendario)
+        # (Aquí puedes agregar el contenido que sigue después del título)
+        # Este espacio lo puedes llenar con el calendario o el contenido que necesites.
+        MDBoxLayout:
+            orientation: 'vertical'
+            # Aquí iría el código para el calendario o cualquier otro contenido que desees mostrar
