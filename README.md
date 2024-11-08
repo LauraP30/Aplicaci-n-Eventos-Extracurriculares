@@ -2,7 +2,7 @@
 
 ![image](https://github.com/LauraP30/Proyecto-Gestion-Prestamos/blob/main/1.png?raw=true) 
 
-Este proyecto fue desarrollado utilizando Python como lenguaje de programación y el framework Kivy para crear la aplicación móvil. Kivy es una biblioteca de código abierto que permite el desarrollo de aplicaciones multitáctiles y multiplataforma, lo que facilita la creación de aplicaciones móviles con una sola base de código. Gracias a su flexibilidad y a su soporte para dispositivos Android e iOS, Kivy fue la herramienta ideal para construir una interfaz de usuario interactiva y atractiva, asegurando la compatibilidad en diversas plataformas y dispositivos.
+Este proyecto fue desarrollado utilizando Python como lenguaje de programación y el framework Kivy para crear la aplicación móvil. Kivy es una biblioteca de código abierto que permite el desarrollo de aplicaciones multitáctiles y multiplataforma, lo que facilita la creación de aplicaciones móviles con una sola base de código. Para la gestión de datos en tiempo real, se utilizó Firebase, una plataforma de Google que proporciona una base de datos en tiempo real, facilitando la sincronización de datos entre los usuarios y permitiendo una experiencia fluida y actualizada al instante.
 
 **IMPLEMENTACIÓN DEL PROYECTO EN PYTHON**
 
