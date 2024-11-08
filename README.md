@@ -62,7 +62,7 @@ Este proyecto fue desarrollado utilizando Python como lenguaje de programación 
 
   **IMPLEMENTACIÓN DE LA BASE DE DATOS EN FIREBASE**
 
-  ![image](https://github.com/LauraP30/Proyecto-Gestion-Prestamos/blob/main/Base_Datos.png?raw=true) 
+  ![image](https://github.com/LauraP30/Proyecto-Gestion-Prestamos/blob/main/Inicio_Sesión.png?raw=true) 
   
 La base de datos de este proyecto fue implementada utilizando Firebase en su modalidad de base de datos en tiempo real, lo que permite una sincronización instantánea de los datos entre todos los usuarios. En Firebase, se crearon tres colecciones principales para organizar la información de la aplicación:
 
