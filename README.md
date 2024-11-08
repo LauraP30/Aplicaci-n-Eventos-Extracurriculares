@@ -70,3 +70,21 @@ La base de datos de este proyecto fue implementada utilizando Firebase en su mod
 - **Eventos:** En esta colección se guardan todos los eventos creados dentro de la aplicación, incluyendo detalles como el nombre del evento, la imagen, la ubicación, la descripción, así como la fecha y la hora del evento.
 - **Inscritos:** Esta colección se encarga de registrar a los usuarios que se inscriben en un evento específico, permitiendo mantener actualizada la lista de participantes en tiempo real.
 Con Firebase, la aplicación puede acceder y modificar los datos de manera rápida y eficiente, garantizando que todos los usuarios vean la información actualizada al instante.
+
+**Pantalla de nicio de sesión y creación de cuenta**
+El proceso de inicio de sesión y creación de cuenta en la aplicación está gestionado a través de Firebase Authentication, una herramienta de Firebase que permite autenticar a los usuarios de manera segura. Para crear una cuenta, los usuarios deben proporcionar un correo electrónico y una contraseña, los cuales son almacenados de forma segura en Firebase.
+
+
+
+
+**Pantalla de eventos**
+La pantalla de eventos de la aplicación presenta una vista dinámica que muestra una serie de tarjetas (cards), cada una representando un evento diferente. Estas tarjetas se generan automáticamente a partir de los datos almacenados en la base de datos de Firebase, y contienen información clave como el nombre del evento, una imagen relacionada, la ubicación, la descripción, así como la fecha y hora del evento. La interfaz está diseñada para que los usuarios puedan desplazarse verticalmente por los eventos disponibles, visualizando de forma clara y atractiva los detalles de cada uno. La información que aparece en las tarjetas se sincroniza en tiempo real, por lo que cualquier cambio o adición de eventos en la base de datos se reflejará instantáneamente en la pantalla de los usuarios.
+
+
+
+**Detalles del evento en Popup**
+Cada evento tiene su propio popup que se activa al hacer clic en una tarjeta del evento en la pantalla principal. Este popup muestra de manera detallada la imagen del evento, una descripción más extensa, la ubicación, la fecha y hora, brindando a los usuarios toda la información relevante de forma clara y accesible. Además, el popup incluye un botón de inscripción, que permite a los usuarios registrarse directamente en el evento con un solo clic.
+
+
+**Pantalla de eventos inscritos**
+La pantalla de eventos inscritos muestra una lista de todos los eventos a los que el usuario se ha inscrito. En esta pantalla, los eventos se presentan en tarjetas (cards) que incluyen solo la imagen y el nombre del evento, proporcionando una vista sencilla pero clara de los eventos a los que el usuario está participando. Cada tarjeta tiene un botón de cancelar inscripción, que permite al usuario eliminar su inscripción de un evento. Al hacer clic en este botón, no solo se elimina el evento de la vista del usuario, sino que también se actualiza la base de datos en tiempo real, eliminando la inscripción en el backend.
