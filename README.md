@@ -74,8 +74,8 @@ Con Firebase, la aplicación puede acceder y modificar los datos de manera rápi
 
 **Pantalla de nicio de sesión y creación de cuenta**
 
-[![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/b59c92cb6968f50c82804053c25393da30cfe2c0/Inicio_Sesi%C3%B3n.png)
-[![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/b59c92cb6968f50c82804053c25393da30cfe2c0/Crear_Cuenta.png)
+![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/b59c92cb6968f50c82804053c25393da30cfe2c0/Inicio_Sesi%C3%B3n.png)
+![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/b59c92cb6968f50c82804053c25393da30cfe2c0/Crear_Cuenta.png)
 
 El proceso de inicio de sesión y creación de cuenta en la aplicación está gestionado a través de Firebase Authentication, una herramienta de Firebase que permite autenticar a los usuarios de manera segura. Para crear una cuenta, los usuarios deben proporcionar un correo electrónico y una contraseña, los cuales son almacenados de forma segura en Firebase.
 
