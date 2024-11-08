@@ -4,8 +4,7 @@ Este proyecto fue desarrollado utilizando Python como lenguaje de programación 
 
 **IMPLEMENTACIÓN DEL PROYECTO EN PYTHON**
 
-![image](https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/b59c92cb6968f50c82804053c25393da30cfe2c0/Importaciones.png)
-
+<img src="https://github.com/LauraP30/Aplicaci-n-Eventos-Extracurriculares/blob/b59c92cb6968f50c82804053c25393da30cfe2c0/Importaciones.png?raw=true" alt="image" width="400"/>
 
 - **from datetime import datetime:**
   Importa la clase datetime del módulo datetime, lo que permite trabajar con fechas y horas en Python. Esta clase se usa para obtener la fecha y hora actuales, formatearlas o realizar cálculos con fechas.
