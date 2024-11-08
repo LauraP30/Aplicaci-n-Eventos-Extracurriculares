@@ -1,1 +1,3 @@
-# Aplicaci-n-Eventos-Extracurriculares
+# Aplicación-Eventos-Extracurriculares
+
+#IMPLEMENTACIÓN DEL PROYECTO EN PYTHON
