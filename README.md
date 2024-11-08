@@ -61,3 +61,11 @@ Este proyecto fue desarrollado utilizando Python como lenguaje de programación 
 
 - **from kivy.uix.popup import Popup:**
   Importa Popup desde kivy.uix.popup. Este widget permite mostrar ventanas emergentes o "pop-ups" que pueden contener otros widgets y ofrecer interacción adicional con el usuario.
+
+  **Implementación de la base de datos en Firebase**
+La base de datos de este proyecto fue implementada utilizando Firebase en su modalidad de base de datos en tiempo real, lo que permite una sincronización instantánea de los datos entre todos los usuarios. En Firebase, se crearon tres colecciones principales para organizar la información de la aplicación:
+
+- **Usuarios:** Esta colección almacena los datos de los usuarios que crean una cuenta en la aplicación, permitiendo gestionar la autenticación y la información personal asociada a cada perfil.
+- **Eventos:** En esta colección se guardan todos los eventos creados dentro de la aplicación, incluyendo detalles como el nombre del evento, la imagen, la ubicación, la descripción, así como la fecha y la hora del evento.
+- **Inscritos:** Esta colección se encarga de registrar a los usuarios que se inscriben en un evento específico, permitiendo mantener actualizada la lista de participantes en tiempo real.
+Con Firebase, la aplicación puede acceder y modificar los datos de manera rápida y eficiente, garantizando que todos los usuarios vean la información actualizada al instante.
